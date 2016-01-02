@@ -1,28 +1,11 @@
-== README
+== PhotoApp
+Third Ruby on Rails learning project for a Udemy course. An image uploading service.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+=== Features
+* Upon registration, users can upload and browse all users' images in the service. There's a catch: you got to pay 10$ to get in!
+* Payment for the service is handled by Stripe[https://stripe.com/]. Registration form does some AJAX magic to OK/not-OK the Stripe processing before the rest of it. (The app's test environment Stripe runs with Monopoly money only. You can use the payment info "4242 4242 4242 4242" + any 3 digit cvv + valid expiry date" for testing purposes!)
+* Customized Devise[https://github.com/plataformatec/devise] for other registration & authentication stuff. Now with a confirmation mailer!
+* Carrierwave[https://github.com/carrierwaveuploader/carrierwave] on top of Fog[https://github.com/fog/fog] for image uploading in different environments.
+* Images are stored on Amazon S3[https://aws.amazon.com/s3/] in production, locally in development.
+* Minimagick[https://github.com/minimagick/minimagick] for easy resizing of images.
+* Twitter-Bootstrap[https://github.com/seyhunak/twitter-bootstrap-rails] to jumpstart styling.
